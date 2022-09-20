@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+  <style>
+    .my-div {width: 25px; height: 25px;background-color:red; margin:1px;}
+  </style>
+
+</head>
+<body>
+
+
+<div id="outerDiv">
+<div class="my-div " id="1"; onclick="writeOut()"></div>
+<div class="my-div" id="2"></div>
+</div>
+
+
+<p id="pop-up"></p>
+
+<script>
+    document.getElementById("pop-up").addEventListener("click",writeOut)
+
+    function writeOut(){
+        const id = target.id;
+        console.log("hi from div number" + id)
+        document.getElementById("pop-up").innerText = id;
+
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

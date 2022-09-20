@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+</head>
+<body>
+
+<h2>Exercice 1</h2>
+<p>In this exercise we could change the color of the boxes</p>
+<div id="box1"  style="width: 100px;margin: 1px; background-color: blue; ">&nbsp;</div>
+<div id="box2" style="width: 100px;margin: 1px; background-color: blue">&nbsp;</div>
+<div id="box3" style="width: 100px;margin: 1px; background-color: blue">&nbsp;</div>
+
+<button id="changecolor" onclick="changeColor">Change color</button>
+
+<script>
+
+    const divs = document.querySelectorAll("div")
+    document.getElementById("changecolor").addEventListener("dblclick", changeColor)
+
+function changeColor(){
+    alert("Hello! I am an alert box!!");
+// document.getElementById("box1").style.backgroundColor = 'red';
+divs[0].style.backgroundColor = "red";
+divs[1].style.backgroundColor = 'green';
+divs[2].style.backgroundColor = 'orange';
+}
+
+
+
+</script>
+
+
+</body>
+</html>
