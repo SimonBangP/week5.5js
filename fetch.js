@@ -19,6 +19,9 @@ fetch(URL, options)
 const button = document.getElementById("load-data-btn")
 button.onclick = loadData
 
+const  tblbtn = document.getElementById("load-tbl")
+tblbtn.onclick = createTable()
+
 //GET Request
 function loadData() {
     fetch(URL)
@@ -39,9 +42,44 @@ function loadData() {
             document.getElementById("my-ul").innerHTML = ulAsStr
             console.log(names)
 
+
         })
         .catch(e => {
             console.error(e)
         })
     console.log("Who was called first")
 }
+
+/*
+function createTable() {
+    fetch(URL)
+        .then(function (r) {
+            if (!r.ok) {
+                return Promise.reject("Fail")
+            }
+            return r.json()
+        })
+         .then(user => {
+           const tableRows = user.map ( user => `
+           <tr>
+           <td>${user.name}</td>
+           <td>${user.email}</td>
+</tr>
+           
+           `).join("\n")
+
+  document.getElementById("load-tbl").innerHTML = tableRows
+         }  ) }
+*/
+
+/*
+function createTable(usersToMap){
+const tableRows = usersToMap.map(user => `
+<tr>
+<td>${user.name}</td>
+<td>${user.email}</td>
+
+</tr>
+`).join("\n")
+    document.getElementById("tbl-body").innerHTML = tableRows
+}*/
