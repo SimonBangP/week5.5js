@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
+</head>
+<body>
+<h2>Exercice 3</h2>
+
+
+<button id="load-list">Load the list</button>
+<ul id="ul-names"></ul>
+<br>
+<input id="name-input" placeholder="Insert a name">
+<button id="add-name">Add Name</button>
+<button id="remove-first-name">Remove First name</button>
+<button id="remove-last-name">Remove Last name</button>
+
+
+
+<script>
+
+    document.getElementById("load-list").addEventListener("click", getList)
+
+    const names = ["Lars", "Peter", "Janne", "Susanne"]
+
+    function getList() {
+
+        document.getElementById("ul-names").innerHTML = names.map(name => `
+    <li>${name}</li>
+    `).join("")
+    }
+
+    document.getElementById("add-name").onclick = (evt) => {
+        evt.preventDefault()
+        const newName = document.getElementById("name-input").value
+        names.push(newName)
+        getList()
+    }
+
+    document.getElementById("remove-first-name").onclick = (evt) => {
+        evt.preventDefault()
+        names.shift()
+        getList()
+    }
+
+    document.getElementById("remove-last-name").onclick = (evt) => {
+        evt.preventDefault()
+        names.pop()
+        getList()
+
+    }
+
+
+
+</script>
+</body>
+</html>
