@@ -20,7 +20,7 @@ const button = document.getElementById("load-data-btn")
 button.onclick = loadData
 
 const  tblbtn = document.getElementById("load-tbl")
-tblbtn.onclick = createTable()
+tblbtn.onclick = createTable
 
 //GET Request
 function loadData() {
@@ -50,7 +50,7 @@ function loadData() {
     console.log("Who was called first")
 }
 
-/*
+
 function createTable() {
     fetch(URL)
         .then(function (r) {
@@ -62,15 +62,16 @@ function createTable() {
          .then(user => {
            const tableRows = user.map ( user => `
            <tr>
+           <td>${user.id}</td>
            <td>${user.name}</td>
            <td>${user.email}</td>
 </tr>
            
            `).join("\n")
 
-  document.getElementById("load-tbl").innerHTML = tableRows
+  document.getElementById("tbl-body").innerHTML = tableRows
          }  ) }
-*/
+
 
 /*
 function createTable(usersToMap){
