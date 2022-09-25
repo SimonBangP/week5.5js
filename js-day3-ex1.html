@@ -15,18 +15,22 @@
 
 <p>See console for output or just below</p>
 <ul id="my-ul"></ul>
-<button id="load-data-btn">Load data</button>
+<input id="find-user-input" placeholder="Enter user Id">
+<button id="find-user-btn">Search for user</button>
+<button id="load-data-btn" style="display: none">Load data</button>
 <button id="load-tbl">Load table</button>
 
 <input id="input-id" type="text" placeholder="Enter id">
 <button id="get-user-btn">Get User</button>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-hover" style="margin-top: 10vh;">
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Street</th>
+            <th>City</th>
         </tr>
     </thead>
     <tbody id="tbl-body"></tbody>
