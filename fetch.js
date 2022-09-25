@@ -72,6 +72,21 @@ function createTable() {
   document.getElementById("tbl-body").innerHTML = tableRows
          }  ) }
 
+function getUser() {
+    const id = document.getElementById("input-id").value
+    document.getElementById("get-user-content").style.display = "block"
+
+    fetch(URL + id)
+        .then(res => {if (!res.ok){return Promise.reject("user not found")}
+        return res.json()})
+        .then(user => {
+            const content = document.getElementById("get-user-content")
+            document.getElementById("name").innerText = user.name
+            document.getElementById("email").innerText = user.email
+        })
+
+
+}
 
 /*
 function createTable(usersToMap){
